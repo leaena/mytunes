@@ -13,6 +13,9 @@ MyTunes.Views.PlayerView = Backbone.View.extend({
 
   setSong: function(song){
     this.model = song;
+    this.$el.on('ended', function(){
+      song.trigger('ended', this);
+    });
     this.render();
   },
 
