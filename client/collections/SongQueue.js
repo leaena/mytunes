@@ -10,8 +10,8 @@ MyTunes.Collections.SongQueue = MyTunes.Collections.Songs.extend({
       }
     });
     this.on('ended', function(){
-      if(this.length > 1){
-        this.shift();
+      this.shift();
+      if(this.length >= 1){
         this.playFirst();
       }
     });
