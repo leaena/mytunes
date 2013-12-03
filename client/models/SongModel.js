@@ -4,6 +4,7 @@ window.MyTunes.Models = window.MyTunes.Models || {};
 
 MyTunes.Models.SongModel = Backbone.Model.extend({
   playcount: 0,
+  vote: 0,
   play: function(){
     // Triggering an event here will also trigger the event on the collection
     this.trigger('play', this);
@@ -14,6 +15,14 @@ MyTunes.Models.SongModel = Backbone.Model.extend({
   },
   enqueue: function(){
     this.trigger('enqueue', this);
+  },
+  upvote: function(){
+    this.vote++;
+    this.trigger('upvote', this);
+  },
+  downvote: function(){
+    this.vote--;
+    this.trigger('downvote', this);
   }
 
 });

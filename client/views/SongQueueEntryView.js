@@ -13,7 +13,7 @@ MyTunes.Views.SongQueueEntryView = Backbone.View.extend({
   },
 
   render: function(){
-    return this.$el.html(this.template(this.model.attributes)).append('<span> PlayCount: </span>'+ this.model.playcount);
+    return this.$el.html(this.template(this.model.attributes)).append('<span class="playcount"> PlayCount: '+ this.model.playcount + "</span> ");
   }
 
 });
